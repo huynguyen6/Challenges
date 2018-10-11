@@ -75,7 +75,7 @@ int main()
     I use both a tens and ones portion, it is so that I can easily
     concatenate the string for output.*/
     if(fullUsrMinNum < 10) {
-        minuteOutput = ones[(fullUsrMinNum - 1)];
+        minuteOutput = "oh " + ones[(fullUsrMinNum - 1)];
     } else if (fullUsrMinNum == 10) {
         minuteOutput = tens[0];
     } else if(fullUsrMinNum > 10 && fullUsrMinNum < 20) {
