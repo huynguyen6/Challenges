@@ -47,7 +47,7 @@ int main()
     string later on. With math this could be shorter. When
     I use both a tens and ones portion, it is so that I can easily
     concatenate the string for output.*/
-    if(fullUsrHourNum < 10) {
+    if(fullUsrHourNum < 10 && fullUsrHourNum > 0) {
         hourOutput = ones[(fullUsrHourNum - 1)];
     } else if(fullUsrHourNum == 10) {
         hourOutput = tens[0];
@@ -59,6 +59,8 @@ int main()
         hourOutput = tens[(fullUsrHourNum - 22)];
     } else if(fullUsrHourNum == 23) {
         hourOutput = withinTen[(fullUsrHourNum - 23)];
+    } else if(fullUsrHourNum == 0) {
+        hourOutput = withinTen[1];
     }
 
     /*We're about to turn the minutes value into a single string with just
@@ -104,8 +106,8 @@ int main()
         tensMinuteOutput = tens[4];
         onesMinuteOutput = ones[(fullUsrMinNum - 51)];
         minuteOutput = tensMinuteOutput + " " + onesMinuteOutput;
-    } else if(fullUsrMinNum == 60) {
-        minuteOutput = tens[5];
+    } else if(fullUsrMinNum == 0) {
+        minuteOutput = "";
     }
 
     /*Whether the output will be in AM or PM depends on the time of day.
